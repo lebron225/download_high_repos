@@ -1,6 +1,6 @@
 
 
-REPOSITORY_JAVA_DB = {
+REPOSITORY_DB = {
     'host':'',
     'db':'',
     'user':'',
