@@ -42,7 +42,7 @@ with open(DOWNLOAD_LIST_PATH) as f:
 
                     tag_msg_output = os.popen('git show %s ' % tag_name[:-1] + '-q --pretty=format:"%H' + SEP + '%an' + SEP + '%ad"')
 
-                    split = tag_msg_output.readlines()[-1].split('|++*X_-_X*++|')
+                    split = tag_msg_output.readlines()[-1].split(SEP)
 
                     uuid_list.append(uuid.uuid1().__str__())
                     commit_id_list.append(split[0])
