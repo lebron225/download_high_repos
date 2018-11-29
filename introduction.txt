@@ -1,0 +1,78 @@
+
+
+
+
+
+============================================= Introduction =============================================
+
+
+
+    Function:
+
+        Download github repositories to specified path.
+
+
+    Parameter:
+
+        mode:
+
+            default: download the projects in DB from minimum to maximum values of the star.
+            ff: download the projects in the list given by specified file.
+
+        star:
+
+            Note: It's only given in default mode.
+
+            Including minimum and maximum values separated by "-".
+            "star:x-y" means x ≤ star ≤ y.
+
+        data-path:
+
+            Note: It's only given in ff mode.
+
+            It's the path of the file where the git list is stored.
+
+        download-path:
+
+            Default path is "./repository".
+
+
+    Command Form:
+
+        <1> default mode:
+            python run.py mode:default star:<minimum>-<maximum> download-path:<path>
+
+        <2> ff mode:
+            python run.py mode:ff data-path:<path> download-path:<path>
+
+        Note: The order of the parameters must refer to the above form and cannot be changed.
+
+
+    Example:
+
+        nohup python -u run.py mode:default star:100-110 path:default > run.log 2>&1 &
+
+        The projects in DB from 100 to 110 stars will be downloaded to the default path.
+
+
+    Progress View:
+
+        Run check.py under this path to print the current progress on the console.
+
+
+    Q & A:
+
+        Q: How to start ?
+        A: Run the start.sh under this path. As for the detail of parameter, please ref-
+           er to the Parameter part.
+
+        Q: How do I know if the downloading is completed ?
+        A: Run check.py under this path, you will see the downloading progress on the console.
+
+
+
+========================================================================================================
+
+
+
+
