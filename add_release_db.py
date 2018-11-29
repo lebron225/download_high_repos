@@ -7,7 +7,8 @@ from config import config
 DOWNLOAD_LIST_PATH = './download_list.txt'
 
 REPO_PATH = config.DEFAULT_PATH
-DB_CONFIG = config.REPOSITORY_JAVA_DB
+DB_CONFIG = config.REPOSITORY_DB
+TABLE = DB_CONFIG['table']['C/C++_releases']
 
 PREFIX_LEN = len('https://github.com')
 SEP = '|++*X_-_X*++|'
@@ -62,7 +63,7 @@ with open(DOWNLOAD_LIST_PATH) as f:
 
     MysqlOperation.insert_into_mysql(
         db_config = DB_CONFIG,
-        tablename = 'C/C++_releases',
+        tablename = TABLE,
         params = {
             'uuid': uuid_list,
             'commit_id': commit_id_list,

@@ -1,11 +1,14 @@
 
 
-REPOSITORY_JAVA_DB = {
+REPOSITORY_DB = {
     'host':'',
     'db':'',
     'user':'',
     'passwd':'',
-    'charset':'utf8mb4'
+    'charset':'utf8mb4',
+    'table':{
+
+    }
 }
 
 REPOSITORY_TEST_DB = {
@@ -13,7 +16,10 @@ REPOSITORY_TEST_DB = {
     'db':'',
     'user':'',
     'passwd':'',
-    'charset':'utf8mb4'
+    'charset':'utf8mb4',
+    'table':{
+
+    }
 }
 
 GITHUB = {

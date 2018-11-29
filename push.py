@@ -20,8 +20,9 @@ def is_match(string, pattern):
 
 
 REDIS_CONFIG = config.REDIS
-REPOSITORY_HIGH_DB = config.REPOSITORY_JAVA_DB
+DB_CONFIG = config.REPOSITORY_DB
 DEFAULT_PATH = config.DEFAULT_PATH
+TABLE = DB_CONFIG['table']['repository_java']
 
 
 print('\n')
@@ -76,8 +77,8 @@ else:
     if mode == 'mode:default':
         where = 'convert(stars,signed) >= %s and repository_id != -1 and convert(stars,signed) <= %s' % (star_min, star_max)
         ret = MysqlOperation.get_data_from_mysql(
-            db_config = REPOSITORY_HIGH_DB,
-            tablename = 'repository_java',
+            db_config = DB_CONFIG,
+            tablename = TABLE,
             fields=['git_addr'],
             where=where
         )
