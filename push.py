@@ -88,4 +88,4 @@ else:
     else:
         with open(sys.argv[2][10:], 'r') as f:
             for item in f.readlines():
-                r.rpush('download_list', item)
+                r.rpush('download_list', item[:-1])
