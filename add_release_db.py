@@ -6,6 +6,7 @@ from redis import Redis
 
 from DownloadTools import MysqlOperation
 from DownloadTools import FormatConvert
+from DownloadTools.Log import log
 from config import config
 
 DOWNLOAD_LIST_PATH = './download_list.txt'
@@ -61,6 +62,7 @@ with open(DOWNLOAD_LIST_PATH) as f:
                     except Exception as e:
                         traceback.print_exc()
                         r.rpush('releases_added_failed_list', line[:-1] + '::' + tag_name)
+                        log('releases added failed')
                         flag = -1
 
 
@@ -87,7 +89,7 @@ with open(DOWNLOAD_LIST_PATH) as f:
                     },
                     mode = 'multiple'
                 )
-                print('')
+                log('releases added successfully')
 
         uuid_list.clear()
         commit_id_list.clear()
